@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<title>Angular First Controller</title>
+</head>
+
+<body>
+	
+	<div class="container">
+
+		<div ng-app="">
+			<div ng-controller="FirstController">
+<!-- 				Binding Value:
+				<input type="text" ng-model="data.message" /><br/> -->
+				<h4>{{data.message + " world"}}</h4>
+<!-- 			<div class="{{data.message"}}></div> -->
+			</div>			
+		</div>
+
+	</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script><!-- load angular -->
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
