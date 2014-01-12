@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<title>Angular Filters</title>
+</head>
+
+<body>
+	
+	<div class="container">
+		<div ng-app="myApp">
+
+<!-- 			<input type="text" ng-model="message" /><br/>
+			<h1>{{message}}</h1>
+ -->
+
+			<div ng-controller="FirstController">
+				<input type="text" ng-model="data.message" /><br/>
+				<h1>{{data.message}}</h1>
+			</div>
+
+
+			<div ng-controller="SecondController">
+				<input type="text" ng-model="data.message" /><br/>
+				<h1>{{data.message | reverse}}</h1>
+			</div>	
+
+
+		</div>
+	</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<!-- <script src="/js/app.js"></script> -->
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="js/myAppFilters.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<title>Built in Filters</title>
+</head>
+
+<body>
+	
+	<div class="container">
+
+		<div ng-app="myApp">
+			<div ng-controller="BigTenCtrl">
+				<input type="text" ng-model="search.$">
+				<br>
+				<table>
+					<tr ng-repeat="school in bigten.schools | orderBy:'nickname' | limitTo:10 | filter:search"> <!-- search.name = filter:search || search.nickname  filter:search orderBy:'-x' = DESC-->
+						<td>{{school.name | lowercase}}</td>
+						<td>{{school.nickname | uppercase}}</td>	
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+	</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="js/myAppBuiltInFilters.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
