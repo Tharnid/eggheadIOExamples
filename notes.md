@@ -7,7 +7,7 @@ Binding
 			<!-- <div superman></div> Attribute -->
 			<!-- <div class="superman"></div> class -->
 
-20/89 = 22%
-25/89 = 28%
-30/89 = 34%
-35/89 = 39%
+
+25/90 = 28%
+30/90 = 34%
+35/90 = 39%

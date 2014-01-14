@@ -4,23 +4,21 @@
 	<meta charset="utf-8">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-	<title>Understanding Isolate Scope</title>
+	<title>Alternative to Controllers</title>
 </head>
 
 <body>
 	
   <div ng-app="phoneApp">
     <div ng-controller="AppCtrl">
-        <phone number="555-1234" network="network" make-call="leaveVoicemail(number, message)"></phone>
-        <phone number="867-5309" network="network" make-call="leaveVoicemail(number, message)"></phone>
-        <phone number="911" network="network" make-call="leaveVoicemail(number, message)"></phone>
+        <div class="button" ng-click="AppCtrl.sayHi()">Click me!</div>
     </div>
   </div>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script><!-- load angular -->
-<script src="js/myAppUnderstandingIsolateScope.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+<script src="js/thinkingDifferentlyAboutOrganizing.js"></script>
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </body>

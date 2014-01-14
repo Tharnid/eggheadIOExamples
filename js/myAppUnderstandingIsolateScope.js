@@ -1,58 +1,26 @@
-var app = angular.module("superApp", []);
+var app = angular.module("phoneApp", []);
 
-app.directive("superhero", function() {
+app.controller("AppCtrl", function($scope) {
+    $scope.leaveVoicemail = function(number, message) {
+        alert("Number: " + number + " said: " + message)
+    }
+})
+
+app.directive("phone", function() {
     return {
         restrict: "E",
-        scope: {}, // isolate scope
+        scope: {
+            number: "@",
+            network: "=",
+            makeCall: "&"
+        },
+        template: '<div class="panel panel-default">Number: {{number}} <br> Network:<select ng-model="network" ng-options="net for net in networks">' +
+          '<input type="text" ng-model="value">' +
+          '<div class="btn btn-primary" ng-click="makeCall({number: number, message: value})">Call home!</div></div>',
 
-        controller: function($scope) {
-        $scope.abilities = []
-
-        this.addStrength = function() {
-            $scope.abilities.push("strength")
-        }
-
-        this.addSpeed = function() {
-            $scope.abilities.push("speed")
-        }
-
-        this.addFlight = function() {
-            $scope.abilities.push("flight")
-        }
-    },
-
-    link: function(scope, element) {
-        element.addClass("btn btn-primary");
-        element.bind("mouseenter", function() {
-            console.log(scope.abilities);
-        })
-    }
-  }
-});
-
-app.directive("strength", function() {
-    return {
-        require: "superhero",
-        link: function(scope, element, attrs, superheroCtrl) {
-            superheroCtrl.addStrength();
-        }
-    }
-})
-
-app.directive("speed", function() {
-    return {
-        require: "superhero",
-        link: function(scope, element, attrs, superheroCtrl) {
-            superheroCtrl.addSpeed();
-        }
-    }
-})
-
-app.directive("flight", function() {
-    return {
-        require: "superhero",
-        link: function(scope, element, attrs, superheroCtrl) {
-            superheroCtrl.addFlight();
+        link: function(scope) {
+            scope.networks = ["Verizon", "AT&T", "Sprint"];
+            scope.network = scope.networks[0];
         }
     }
 })
